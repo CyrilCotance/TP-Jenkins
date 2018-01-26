@@ -1,21 +1,28 @@
 package com.imie.tp.calculator.operation;
 
+/**
+ *
+ * @author Cyril
+ *
+ * Classe Addition
+ *
+ */
 public class AdditionOperation extends OperationCommandBase {
 
-    public AdditionOperation(String operand_a, String operand_b) {
-		super(operand_a, operand_b);
-		make();
+    public AdditionOperation(String operandA, String operandB) {
+        super(operandA, operandB);
+        make();
         System.out.println("Result : " + getCurrentValue());
-	}
-
-	@Override
-    public void make() {
-		super.current_value = super.operand_a + super.operand_b;
     }
 
-	@Override
+    @Override
+    public void make() {
+        super.currentValue = super.operandA + super.operandB;
+    }
+
+    @Override
     public float getCurrentValue() {
-        return super.current_value;
+        return super.currentValue;
     }
 
 }
