@@ -5,6 +5,7 @@ public class AdditionOperation extends OperationCommandBase {
     public AdditionOperation(String operand_a, String operand_b) {
 		super(operand_a, operand_b);
 		make();
+        System.out.println("Result : " + getCurrentValue());
 	}
 
 	@Override

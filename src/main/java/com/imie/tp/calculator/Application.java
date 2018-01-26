@@ -7,27 +7,24 @@ import com.imie.tp.calculator.operation.OperationCommand;
 import com.imie.tp.calculator.operation.SubstractionOperation;
 import com.imie.tp.calculator.utils.KeyboardUtils;
 
+/**
+ * @author Cyril
+ * Classe main de l'application
+ */
 public class Application {
-	
+
     public static void main(String[] args) {
 
-    	boolean continue_loop = true;
-		boolean next = true;
-    	OperationCommand add;
-    	SubstractionOperation sus;
-    	DivisionOperation div;
-    	MultiplicationOperation mul;
+    	boolean continueLoop = true;
+		boolean next;
     	String readKeyboard;
 
-    	String operand_a;
-    	String operand_b;
-    	String continue_string = null;
-    	
+    	String operandA;
+    	String operandB;
+    	String continueString;
+
     	do {
-    		
-    		operand_a = "";
-    		operand_b = "";
-    		
+
 	        System.out.println("Type of Operation : ");
 	        System.out.println("- 1 : Addition");
 	        System.out.println("- 2 : Subtraction");
@@ -35,57 +32,41 @@ public class Application {
 	        System.out.println("- 4 : Multiplication");
 	        System.out.println("- 5 : Display History");
 	        System.out.println("- 9 : Quit");
-	    	readKeyboard = KeyboardUtils.readFromKeyboard();
-	    	
-	    	
+	    	readKeyboard = KeyboardUtils.readFromKeyboard("");
+
+
 	    	switch (readKeyboard){
 				case "1": // Addition
 
-			        System.out.println("Enter Value a : ");
-			        operand_a = KeyboardUtils.readFromKeyboard();
-			        System.out.println("Enter Value b : ");
-			        operand_b = KeyboardUtils.readFromKeyboard();
-			        
-			        add = new AdditionOperation(operand_a,operand_b);
-			        
-			        System.out.println("Result : "+add.getCurrentValue());
-					
+			        operandA = KeyboardUtils.readFromKeyboard("Enter Value a : ");
+			        operandB = KeyboardUtils.readFromKeyboard("Enter Value b : ");
+
+			        OperationCommand add = new AdditionOperation(operandA, operandB);
+
 					break;
 				case "2": // Substration
 
-			        System.out.println("Enter Value a : ");
-			        operand_a = KeyboardUtils.readFromKeyboard();
-			        System.out.println("Enter Value b : ");
-			        operand_b = KeyboardUtils.readFromKeyboard();
-			        
-			        sus = new SubstractionOperation(operand_a,operand_b);
-			        
-			        System.out.println("Result : "+sus.getCurrentValue());
-					
+			        operandA = KeyboardUtils.readFromKeyboard("Enter Value a : ");
+			        operandB = KeyboardUtils.readFromKeyboard("Enter Value b : ");
+
+			        SubstractionOperation sus = new SubstractionOperation(operandA, operandB);
+
 					break;
 				case "3": // Division
 
-			        System.out.println("Enter Value a : ");
-			        operand_a = KeyboardUtils.readFromKeyboard();
-			        System.out.println("Enter Value b : ");
-			        operand_b = KeyboardUtils.readFromKeyboard();
-			        
-			        div = new DivisionOperation(operand_a,operand_b);
-			        
-			        System.out.println("Result : "+div.getCurrentValue());
-					
+			        operandA = KeyboardUtils.readFromKeyboard("Enter Value a : ");
+			        operandB = KeyboardUtils.readFromKeyboard("Enter Value b : ");
+
+			        DivisionOperation div = new DivisionOperation(operandA, operandB);
+
 					break;
 				case "4": // Multiplication
 
-			        System.out.println("Enter Value a : ");
-			        operand_a = KeyboardUtils.readFromKeyboard();
-			        System.out.println("Enter Value b : ");
-			        operand_b = KeyboardUtils.readFromKeyboard();
-			        
-			        mul = new MultiplicationOperation(operand_a,operand_b);
-			        
-			        System.out.println("Result : "+mul.getCurrentValue());
-					
+			        operandA = KeyboardUtils.readFromKeyboard("Enter Value a : ");
+			        operandB = KeyboardUtils.readFromKeyboard("Enter Value b : ");
+
+			        MultiplicationOperation mul = new MultiplicationOperation(operandA, operandB);
+
 					break;
 				case "5": // Display History
 
@@ -95,30 +76,31 @@ public class Application {
 			        //    2 * 3 = 6
 					break;
 				case "9": // Quit
-					continue_loop = false;
+					continueLoop = false;
 					break;
-	
+
 				default:
 		    		System.out.println("Sorry, i don't understand...");
 					break;
 	    	}
-	    	
+
 	    	do {
 		    	System.out.println("Do another operation? y/n");
-		    	continue_string = KeyboardUtils.readFromKeyboard();
-		    	if("y".equalsIgnoreCase(continue_string)){
+		    	continueString = KeyboardUtils.readFromKeyboard("");
+		    	if("y".equalsIgnoreCase(continueString)){
 		    		next = false;
-		    	}else if ("n".equalsIgnoreCase(continue_string)){
+		    	}else if ("n".equalsIgnoreCase(continueString)){
 		    		next = false;
-		    		continue_loop = false;
+		    		continueLoop = false;
 		    	}else {
+		    		next = true;
 		    		System.out.println("Sorry, i don't understand...");
 		    	}
 	    	}while(next);
-	    	
-	    	
-    	}while(continue_loop);
-    	
+
+
+    	}while(continueLoop);
+
     	System.out.println("See you !");
     }
 
