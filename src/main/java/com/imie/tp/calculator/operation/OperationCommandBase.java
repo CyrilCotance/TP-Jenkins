@@ -1,5 +1,12 @@
 package com.imie.tp.calculator.operation;
 
+/**
+ *
+ * @author Cyril
+ *
+ * Abstract class OperationCommandBase
+ *
+ */
 public abstract class OperationCommandBase implements OperationCommand {
 
     public float operandA;
