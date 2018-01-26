@@ -85,9 +85,9 @@ public class Application {
 	    	do {
 		    	System.out.println("Do another operation? y/n");
 		    	continue_string = KeyboardUtils.readFromKeyboard();
-		    	if(new String("y").equalsIgnoreCase(continue_string)){
+		    	if("y".equalsIgnoreCase(continue_string)){
 		    		next = false;
-		    	}else if (new String("n").equalsIgnoreCase(continue_string)){
+		    	}else if ("n".equalsIgnoreCase(continue_string)){
 		    		next = false;
 		    		continue_loop = false;
 		    	}else {
