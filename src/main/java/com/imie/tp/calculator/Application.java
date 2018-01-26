@@ -9,6 +9,9 @@ public class Application {
     public static void main(String[] args) {
 
     	boolean continue_loop = true;
+
+    	String operand_a;
+    	String operand_b;
     	
     	do {
 	        System.out.println("Type of Operation : ");
@@ -25,7 +28,12 @@ public class Application {
 				case "1": // Addition
 
 			        System.out.println("Enter Value a : ");
+			        operand_a = KeyboardUtils.readFromKeyboard();
 			        System.out.println("Enter Value b : ");
+			        operand_b = KeyboardUtils.readFromKeyboard();
+			        
+			        
+			        
 			        System.out.println("Result : ");
 					
 					break;
