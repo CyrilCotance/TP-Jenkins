@@ -2,20 +2,18 @@ package com.imie.tp.calculator.operation;
 
 public class AdditionOperation extends OperationCommandBase {
 
-    public AdditionOperation(float baseValue) {
-		super(baseValue);
-		// TODO Auto-generated constructor stub
+    public AdditionOperation(String operand_a, String operand_b) {
+		super(operand_a, operand_b);
+		make();
 	}
 
 	@Override
-    public void make(float value) {
-        // TODO Auto-generated method stub
-
+    public void make() {
+		super.current_value = super.operand_a + super.operand_b;
     }
 
     public float getCurrentValue() {
-        // TODO Auto-generated method stub
-        return 0;
+        return super.current_value;
     }
 
 }

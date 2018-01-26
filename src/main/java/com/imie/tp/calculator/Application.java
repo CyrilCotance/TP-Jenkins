@@ -1,19 +1,26 @@
 package com.imie.tp.calculator;
 
+import com.imie.tp.calculator.operation.AdditionOperation;
+import com.imie.tp.calculator.operation.OperationCommand;
 import com.imie.tp.calculator.utils.KeyboardUtils;
 
 public class Application {
-
-	public static String readKeyboard = new String();
 	
     public static void main(String[] args) {
 
     	boolean continue_loop = true;
+		boolean next = true;
+    	OperationCommand add;
+    	String readKeyboard;
 
     	String operand_a;
     	String operand_b;
     	
     	do {
+    		
+    		operand_a = "";
+    		operand_b = "";
+    		
 	        System.out.println("Type of Operation : ");
 	        System.out.println("- 1 : Addition");
 	        System.out.println("- 2 : Subtraction");
@@ -32,9 +39,9 @@ public class Application {
 			        System.out.println("Enter Value b : ");
 			        operand_b = KeyboardUtils.readFromKeyboard();
 			        
+			        add = new AdditionOperation(operand_a,operand_b);
 			        
-			        
-			        System.out.println("Result : ");
+			        System.out.println("Result : "+add.getCurrentValue());
 					
 					break;
 				case "2": // Substration
@@ -73,6 +80,19 @@ public class Application {
 					System.out.println("I don't understand.../r/r");
 					break;
 	    	}
+	    	
+	    	do {
+		    	System.out.println("Do another operation? y/n");
+		    	if(KeyboardUtils.readFromKeyboard().toLowerCase().substring(0, 1).equals("y")){
+		    		next = false;
+		    	}else if (KeyboardUtils.readFromKeyboard().toLowerCase().substring(0, 1).equals("n")){
+		    		next = false;
+		    		continue_loop = false;
+		    	}else {
+		    		System.out.println("Sorry, i don't understand...");
+		    	}
+	    	}while(next);
+	    	
 	    	
     	}while(continue_loop);
     	
