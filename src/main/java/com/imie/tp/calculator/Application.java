@@ -16,7 +16,7 @@ public class Application {
     public static void main(String[] args) {
 
         boolean continueLoop = true;
-        boolean next;
+        boolean next = true;
         String readKeyboard;
         OperationCommand op;
 
@@ -78,6 +78,7 @@ public class Application {
                     break;
                 case "9": // Quit
                     continueLoop = false;
+                    next = false;
                     break;
 
                 default:
@@ -85,7 +86,7 @@ public class Application {
                     break;
             }
 
-            do {
+            while(next){
                 System.out.println("Do another operation? y/n");
                 continueString = KeyboardUtils.readFromKeyboard("");
                 if ("y".equalsIgnoreCase(continueString)){
@@ -97,7 +98,7 @@ public class Application {
                     next = true;
                     System.out.println("Sorry, i don't understand...");
                 }
-            }while(next);
+            }
 
 
         }while(continueLoop);
