@@ -6,8 +6,8 @@ public abstract class OperationCommandBase implements OperationCommand {
     public float operandB;
     public float currentValue;
 
-    public OperationCommandBase(String operand_a, String operand_b){
-        this.operandA = Float.parseFloat(operand_a);
-        this.operandB = Float.parseFloat(operand_b);
+    public OperationCommandBase(String operandA, String operandB){
+        this.operandA = Float.parseFloat(operandA);
+        this.operandB = Float.parseFloat(operandB);
     }
 }

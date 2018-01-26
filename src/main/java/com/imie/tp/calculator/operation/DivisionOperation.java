@@ -9,16 +9,16 @@ package com.imie.tp.calculator.operation;
  */
 public class DivisionOperation extends OperationCommandBase {
 
-    public DivisionOperation(String operand_a, String operand_b) {
-        super(operand_a, operand_b);
+    public DivisionOperation(String operandA, String operandB) {
+        super(operandA, operandB);
         make();
     }
 
     @Override
     public void make() {
-        if(super.operandB == 0) {
+        if (super.operandB == 0) {
             super.currentValue = Integer.MIN_VALUE;
-        }else {
+        } else {
             super.currentValue = super.operandA / super.operandB;
         }
     }
