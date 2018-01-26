@@ -15,6 +15,7 @@ public class Application {
 
     	String operand_a;
     	String operand_b;
+    	String continue_string = null;
     	
     	do {
     		
@@ -77,15 +78,16 @@ public class Application {
 					break;
 	
 				default:
-					System.out.println("I don't understand.../r/r");
+		    		System.out.println("Sorry, i don't understand...");
 					break;
 	    	}
 	    	
 	    	do {
 		    	System.out.println("Do another operation? y/n");
-		    	if(KeyboardUtils.readFromKeyboard().toLowerCase().substring(0, 1).equals("y")){
+		    	continue_string = KeyboardUtils.readFromKeyboard();
+		    	if(new String("y").equalsIgnoreCase(continue_string)){
 		    		next = false;
-		    	}else if (KeyboardUtils.readFromKeyboard().toLowerCase().substring(0, 1).equals("n")){
+		    	}else if (new String("n").equalsIgnoreCase(continue_string)){
 		    		next = false;
 		    		continue_loop = false;
 		    	}else {
