@@ -4,13 +4,9 @@ import java.util.Scanner;
 
 public final class KeyboardUtils {
 
-    public static String readFromKeyboard(String displayAsk) {
+    public static String readFromKeyboard() {
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println(displayAsk);
-
         return keyboard.nextLine();
-
-        keyboard.close();
     }
 }
