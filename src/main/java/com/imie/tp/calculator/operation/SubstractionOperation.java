@@ -1,15 +1,15 @@
 package com.imie.tp.calculator.operation;
 
-public class AdditionOperation extends OperationCommandBase {
+public class SubstractionOperation extends OperationCommandBase {
 
-    public AdditionOperation(String operand_a, String operand_b) {
+	public SubstractionOperation(String operand_a, String operand_b) {
 		super(operand_a, operand_b);
 		make();
 	}
 
 	@Override
     public void make() {
-		super.current_value = super.operand_a + super.operand_b;
+		super.current_value = super.operand_a - super.operand_b;
     }
 
 	@Override

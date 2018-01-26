@@ -1,7 +1,10 @@
 package com.imie.tp.calculator;
 
 import com.imie.tp.calculator.operation.AdditionOperation;
+import com.imie.tp.calculator.operation.DivisionOperation;
+import com.imie.tp.calculator.operation.MultiplicationOperation;
 import com.imie.tp.calculator.operation.OperationCommand;
+import com.imie.tp.calculator.operation.SubstractionOperation;
 import com.imie.tp.calculator.utils.KeyboardUtils;
 
 public class Application {
@@ -11,6 +14,9 @@ public class Application {
     	boolean continue_loop = true;
 		boolean next = true;
     	OperationCommand add;
+    	SubstractionOperation sus;
+    	DivisionOperation div;
+    	MultiplicationOperation mul;
     	String readKeyboard;
 
     	String operand_a;
@@ -48,22 +54,37 @@ public class Application {
 				case "2": // Substration
 
 			        System.out.println("Enter Value a : ");
+			        operand_a = KeyboardUtils.readFromKeyboard();
 			        System.out.println("Enter Value b : ");
-			        System.out.println("Result : ");
+			        operand_b = KeyboardUtils.readFromKeyboard();
+			        
+			        sus = new SubstractionOperation(operand_a,operand_b);
+			        
+			        System.out.println("Result : "+sus.getCurrentValue());
 					
 					break;
 				case "3": // Division
 
 			        System.out.println("Enter Value a : ");
+			        operand_a = KeyboardUtils.readFromKeyboard();
 			        System.out.println("Enter Value b : ");
-			        System.out.println("Result : ");
+			        operand_b = KeyboardUtils.readFromKeyboard();
+			        
+			        div = new DivisionOperation(operand_a,operand_b);
+			        
+			        System.out.println("Result : "+div.getCurrentValue());
 					
 					break;
 				case "4": // Multiplication
 
 			        System.out.println("Enter Value a : ");
+			        operand_a = KeyboardUtils.readFromKeyboard();
 			        System.out.println("Enter Value b : ");
-			        System.out.println("Result : ");
+			        operand_b = KeyboardUtils.readFromKeyboard();
+			        
+			        mul = new MultiplicationOperation(operand_a,operand_b);
+			        
+			        System.out.println("Result : "+mul.getCurrentValue());
 					
 					break;
 				case "5": // Display History
