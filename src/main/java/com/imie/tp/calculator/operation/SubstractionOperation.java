@@ -12,6 +12,7 @@ public class SubstractionOperation extends OperationCommandBase {
     public SubstractionOperation(String operandA, String operandB) {
         super(operandA, operandB);
         make();
+        System.out.println("Result : " + getCurrentValue());
     }
 
     @Override

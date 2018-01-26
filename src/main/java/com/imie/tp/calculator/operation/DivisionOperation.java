@@ -12,6 +12,7 @@ public class DivisionOperation extends OperationCommandBase {
     public DivisionOperation(String operandA, String operandB) {
         super(operandA, operandB);
         make();
+        System.out.println("Result : " + getCurrentValue());
     }
 
     @Override

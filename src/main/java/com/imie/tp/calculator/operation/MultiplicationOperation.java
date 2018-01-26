@@ -11,6 +11,7 @@ public class MultiplicationOperation extends OperationCommandBase{
     public MultiplicationOperation(String operandA, String operandB) {
         super(operandA, operandB);
         make();
+        System.out.println("Result : " + getCurrentValue());
     }
 
     @Override
